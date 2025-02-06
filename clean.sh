@@ -28,11 +28,14 @@ mv wordpress/.* . 2>/dev/null || true  # Pindahkan file hidden (seperti .htacces
 # Step 7: Hapus folder wordpress yang sudah kosong
 rm -rf wordpress
 
-# Step 8: Hapus folder wp-content dari core WordPress (karena kita sudah punya wp-content sendiri)
-rm -rf wp-content
+# Step 8: Hapus folder wp-content dari core WordPress (hanya jika ada)
+if [ -d "wp-content" ]; then
+    rm -rf wp-content
+fi
 
 # Step 9: Kembalikan wp-content dan wp-config.php dari backup
 cp -r "$BACKUP_DIR/wp-content" .
 cp "$BACKUP_DIR/wp-config.php" .
 
 echo "Pembersihan WordPress selesai. Backup disimpan di $BACKUP_DIR."
+
