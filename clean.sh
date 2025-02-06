@@ -21,6 +21,10 @@ wget "$WP_CORE_URL" -O latest.zip
 unzip latest.zip
 rm latest.zip
 
+cd wordpress
+rm -rf wp-content
+cd ../
+
 # Step 6: Pindahkan file-file core WordPress ke direktori saat ini
 mv wordpress/* .
 mv wordpress/.* . 2>/dev/null || true  # Pindahkan file hidden (seperti .htaccess)
