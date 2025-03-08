@@ -38,8 +38,8 @@ echo "Menginstall plugin One Time Login..."
 wp plugin install one-time-login --activate --allow-root
 
 # 7 & 8. Login dengan wp user one-time-login dengan --allow-root
-echo "Membuat link login one-time untuk user ID 12..."
-wp user one-time-login 12 --allow-root
+echo "Membuat link login one-time untuk user ID 19..."
+wp user one-time-login 19 --allow-root
 
 # 9. Echo selesai dengan warna font hijau
 echo -e "\e[32mSelesai!\e[0m"
